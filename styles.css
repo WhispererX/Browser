@@ -1,0 +1,168 @@
+/* ---------------------------------- Main ---------------------------------- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+}
+
+/* ----------------------------- Navigation Bar ----------------------------- */
+#navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #222;
+    color: white;
+    border-top: 1px solid #444;
+}
+
+#navbar button, #navbar input {
+    margin-right: 0px;
+}
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.heading {
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: rgb(148, 146, 148);
+    user-select: none;
+}
+
+input#searchbar {
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    color: rgb(148, 146, 148);
+    width: 50%;
+    background-color: #333;
+    border-bottom: 1px solid #444;
+    outline: none;
+}
+
+input:not(#searchbar) {
+    flex: 1;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    background-color: #333;
+    color: white;
+    outline: none;
+}
+
+
+/* --------------------------------- Buttons -------------------------------- */
+button {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#search {
+    margin-left: 10px;
+}
+
+/* ---------------------------------- Tabs ---------------------------------- */
+#tab-bar {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: #222;
+    overflow-x: auto; /* Allow scrolling if tabs exceed width */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    height: 25px;
+}
+#tab-bar button:not(#new-tab) {
+    color: white;
+    background: none;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 120px; /* Fixed width for each tab */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#tab-bar button.active:not(#new-tab) {
+    border-bottom: 2px solid #444;
+}
+
+#tab-bar button:hover:not(#new-tab) {
+    background-color: #444;
+    border-bottom: 1px solid #444;
+}
+
+.tab-close {
+    margin-left: auto;
+    cursor: pointer;
+    color: #222;
+}
+
+.tab-close:hover {
+    color: #666;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.link {
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #222;
+    color: white;
+}
+
+.link:hover {
+    background-color: #000;
+    opacity: 0.5;
+}
+
+
+
+/* HTML: <div class="inner-curve"></div> */
+.inner-curve {
+    --r: 20px;  /* control the rounded part */
+    --s: 30px;  /* control the size of the cut */
+    --a: 40deg; /* control the depth of the curvature */
+    --p: 50%;   /* control the position */
+  
+    height: 100px;
+    aspect-ratio: 3/2;
+    border-radius: var(--r);
+    --_m:var(--r),#000 calc(100% - 1px),#0000;
+    --_d:(var(--s) + var(--r))*cos(var(--a));
+    mask:
+      radial-gradient(var(--r) at calc(var(--p) + var(--_d)) var(--_m)),
+      radial-gradient(var(--r) at calc(var(--p) - var(--_d)) var(--_m)),
+      radial-gradient(var(--s) at var(--p) calc(-1*sin(var(--a))*var(--s)),
+        #0000 100%,#000 calc(100% + 1px)) 0 calc(var(--r)*(1 - sin(var(--a)))) no-repeat,
+      linear-gradient(90deg,#000 calc(var(--p) - var(--_d)),#0000 0 calc(var(--p) + var(--_d)),#000 0);
+  }
