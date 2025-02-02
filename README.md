@@ -6,11 +6,8 @@
 
 - **Multi-Tab Support**: Open multiple websites in separate tabs.
 - **Lightweight & Fast**: Optimized performance for smooth browsing.
-- **Customizable UI**: Modify themes, fonts, and layouts.
-- **Private Browsing Mode**: Browse without storing history or cookies.
-- **Bookmarks & History**: Save your favorite websites and revisit previous pages.
+- **History**: revisit previous pages.R
 - **DevTools Integration**: Built-in Chromium DevTools for debugging.
-- **Dark & Light Mode**: Switch between themes for better usability.
 - **Keyboard Shortcuts**: Quick navigation with hotkeys.
 
 ## Installation
